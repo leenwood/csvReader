@@ -76,21 +76,17 @@ class csvReader
 
     public function drawTable()
     {
-        echo "<table>";
-        echo "<thead>";
-        echo "<tr>";
+        echo "<table><thead><tr>";
         foreach ($this->header[0] as $item) {
             echo "<td>";
             echo $item;
             echo "</td>";
         }
-        echo "</tr>";
-        echo "</thead>";
-        echo "<tbody>";
-        foreach ($this->table as $key => $value)
+        echo "</tr></thead><tbody>";
+        foreach ($this->table as $value)
         {
             echo "<tr>";
-            foreach ($value as $key => $col)
+            foreach ($value as $col)
             {
                 echo "<td>";
                 echo $col;
