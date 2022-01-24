@@ -24,13 +24,13 @@ class csvReader
     protected $table = [ ];
     protected $header = [ ];
 
-    public function __construct($path, $codeFrom = 'WINDOWS-1251', $codeTo = 'UTF-8', $separator=";")
+    public function __construct($path, $codeFrom = 'WINDOWS-1251', $codeTo = 'UTF-8', $sep=";")
     {
         $this->path = $path;
 
         $this->codeFrom = $codeFrom;
         $this->codeTo = $codeTo;
-        $this->separator = $separator;
+        $this->separator = $sep;
     }
 
     public function fOpen()
@@ -38,7 +38,7 @@ class csvReader
 
         $this->file = fopen($this->path, "r");
         $flag = True;
-        while (($data = fgetcsv($this->file , 0, ";")) !== FALSE) {
+        while (($data = fgetcsv($this->file , 0, $this->separator)) !== FALSE) {
             $rows = array();
             foreach ($data as $key => $value)
             {
