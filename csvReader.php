@@ -1,5 +1,8 @@
 <?php
 
+/***
+ * Create new class for read CSV file
+ */
 class csvReader
 {
 
