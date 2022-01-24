@@ -19,16 +19,18 @@ class csvReader
     protected $file;
     protected $codeFrom;
     protected $codeTo;
+    protected $separator;
 
     protected $table = [ ];
     protected $header = [ ];
 
-    public function __construct($path, $codeFrom = 'WINDOWS-1251', $codeTo = 'UTF-8')
+    public function __construct($path, $codeFrom = 'WINDOWS-1251', $codeTo = 'UTF-8', $separator=";")
     {
         $this->path = $path;
 
         $this->codeFrom = $codeFrom;
         $this->codeTo = $codeTo;
+        $this->separator = $separator;
     }
 
     public function fOpen()
